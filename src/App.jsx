@@ -33,6 +33,7 @@ const App = () => {
         let allCountries = [];
         
         while (true) {
+          console.log("API Key Loaded:", Boolean(API_KEY));
           const res = await fetch(
             `https://api.restcountries.com/countries/v5?response_fields=${fields}&limit=${limit}&offset=${offset}`,
             {
@@ -43,8 +44,14 @@ const App = () => {
           );
 
           if (!res.ok) {
-            throw new Error("Failed to fecth countries");
-          }
+            const errorData = await res.text();
+
+            console.log("Status Code:", res.status);
+            console.log("Status Message:", res.statusText);
+            console.log("Error Response:", errorData);
+
+            throw new Error("Failed to fetch countries");
+        }
 
           const data = await res.json();
           //console.log(data)

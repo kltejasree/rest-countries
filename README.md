@@ -84,4 +84,3 @@ src/
 - Implementing search and filter functionality.
 - Conditional rendering.
 - Using Tailwind CSS for styling.
-
