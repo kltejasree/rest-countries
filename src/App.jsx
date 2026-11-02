@@ -43,11 +43,11 @@ const App = () => {
           );
 
           if (!res.ok) {
-            const errorData = await res.text();
+            //const errorData = await res.text();
 
-            console.log("Status Code:", res.status);
-            console.log("Status Message:", res.statusText);
-            console.log("Error Response:", errorData);
+            //console.log("Status Code:", res.status);
+            //console.log("Status Message:", res.statusText);
+            //console.log("Error Response:", errorData);
 
             throw new Error("Failed to fetch countries");
         }
@@ -79,6 +79,7 @@ const App = () => {
         console.error("Error fetching countries", error);
       } finally {
         setLoading(false);
+
       }
     };
 
