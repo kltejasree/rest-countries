@@ -33,7 +33,6 @@ const App = () => {
         let allCountries = [];
         
         while (true) {
-          console.log("API Key Loaded:", Boolean(API_KEY));
           const res = await fetch(
             `https://api.restcountries.com/countries/v5?response_fields=${fields}&limit=${limit}&offset=${offset}`,
             {

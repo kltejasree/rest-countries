@@ -2,7 +2,6 @@
 
 A React application that displays information about countries using the REST Countries API.
 
-Deployment link : https://rest-countries-one-fawn.vercel.app/
 
 ## Features
 
