@@ -8,6 +8,7 @@ A React application that displays information about countries using the REST Cou
 - View a list of countries with their flags.
 - Search countries by name.
 - Filter countries by region.
+- Filter countries by subregion.
 - View detailed information about each country.
 - Dark mode toggle.
 - Loading spinner while fetching data.
@@ -61,10 +62,11 @@ A React application that displays information about countries using the REST Cou
 ```text
 src/
 ├── components/
-│   ├── CountryCard.jsx
+    |── CountryCard.jsx
 │   ├── CountryDetails.jsx
 │   ├── CountryList.jsx
 │   ├── FilterRegion.jsx
+│   ├── FilterBySubRegion.jsx
 │   ├── Header.jsx
 │   ├── SearchBar.jsx
 │   └── Spinner.jsx

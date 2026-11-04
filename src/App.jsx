@@ -5,6 +5,7 @@ import SearchBar from "./components/SearchBar";
 import FilterRegion from "./components/FilterRegion"
 import CountryList from "./components/CountryList";
 import CountryDetails from "./components/CountryDetails";
+import FilterBySubRegion from "./components/FilterBySubRegion";
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedRegion, setSelectedRegion]=useState("");
   const [selectedCountry, setSelectedCountry]=useState(null);
+  const [selectedSubRegion, setSelectedSubRegion] = useState("");
 
   const toggleDarkMode = () => {
     setDarkMode((prev) => !prev);
@@ -92,8 +94,9 @@ const App = () => {
   
     const matchSearch = country.names.common.toLowerCase().includes(searchTerm.toLowerCase());
     const matchRegion = selectedRegion === "" || country.region===selectedRegion;
+    const matchSubRegion = selectedSubRegion === "" || country.subregion === selectedSubRegion;
   
-    return matchRegion && matchSearch;
+    return matchRegion && matchSearch && matchSubRegion;
   }
   );
 
@@ -113,10 +116,14 @@ const App = () => {
               
           ):(
             <>
-             <div className="flex items-center justify-between ">
+             <div className="flex flex-col items-center lg:flex-row lg:justify-between">
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-            <FilterRegion selectedRegion={selectedRegion} setSelectedRegion={setSelectedRegion}/>
+            <div className = "flex gap-5">
+              <FilterRegion selectedRegion={selectedRegion} setSelectedRegion={setSelectedRegion}/>
+              <FilterBySubRegion countries = {countries} selectedSubRegion = {selectedSubRegion} setSelectedSubRegion = {setSelectedSubRegion} />
             </div>
+            </div>
+            
             {loading ? (<Spinner />) : (
             <CountryList countries={filteredCountries} 
             onCountryClick={(country)=>setSelectedCountry(country)}/>
