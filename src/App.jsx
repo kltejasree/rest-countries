@@ -118,7 +118,7 @@ const App = () => {
             <>
              <div className="flex flex-col items-center lg:flex-row lg:justify-between">
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-            <div className = "flex gap-5">
+            <div className = "flex w-full flex-xol gap-4 sm:w-auto sm:flex-row">
               <FilterRegion selectedRegion={selectedRegion} setSelectedRegion={setSelectedRegion}/>
               <FilterBySubRegion countries = {countries} selectedSubRegion = {selectedSubRegion} setSelectedSubRegion = {setSelectedSubRegion} />
             </div>
