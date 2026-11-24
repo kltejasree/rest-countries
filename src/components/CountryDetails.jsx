@@ -1,4 +1,3 @@
-
 import { IoArrowBack } from "react-icons/io5";
 
 const CountryDetails = ({ country, onBack }) => {
@@ -33,7 +32,6 @@ const CountryDetails = ({ country, onBack }) => {
             />
           )}
         </div>
-
         
         <div>
           <h1 className="mb-8 text-3xl font-bold">

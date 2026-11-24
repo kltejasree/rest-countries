@@ -1,7 +1,6 @@
 import { IoMoonOutline } from "react-icons/io5";
 
-const Header = ({darkMode, toggleDarkMode}) => {
-
+const Header = ({toggleDarkMode}) => {
 
   return (
     <header
